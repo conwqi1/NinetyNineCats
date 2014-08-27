@@ -1,0 +1,7 @@
+<h1>Enter information for a cat<br>Input a new cat </h1>
+
+
+<form action="<%= cats_url %>" method="post">
+  <%= render "form",  cat: @cat %>
+  <input name="_method" type="hidden" value="POST">
+</form>

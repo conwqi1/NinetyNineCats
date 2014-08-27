@@ -1,0 +1,7 @@
+<h1> Edit cat info </h1>
+
+
+<form action="<%= cat_url(@cat) %>" method="post">
+  <%= render "form",  cat: @cat %>
+  <input name="_method" type="hidden" value="PATCH">
+</form>

@@ -1,0 +1,47 @@
+<h1><%= @cat.name %>'s info</h1>
+
+<table style="width:50%">
+  <tr>
+    <td>name</td>
+    <td>age</td> 
+    <td>birthdate</td>
+    <td>color</td>
+    <td>sex</td>
+    <td>description</td>
+  </tr>
+  <tr>
+    <td><%= @cat.name %></td>
+    <td><%= @cat.age %></td> 
+    <td><%= @cat.birth_date %></td>
+    <td><%= @cat.color %></td>
+    <td><%= @cat.sex %></td>
+    <td><%if @cat.description%>
+            <%= @cat.description %>
+        <%else%>
+          <%= "None" %>
+        <%end%></td>
+  </tr>
+</table>
+<br>
+<h1><%= @cat.name %>'s rental request info</h1>
+<table style = "width: 50%">
+<tr>
+    <td>Start Date</td>
+    <td>End Date</td>
+</tr> 
+  <% @cat.cat_rental_requests.order("start_date").each do |rental| %>
+  <tr>
+    <td><%= rental.start_date %></td>
+    <td><%= rental.end_date %></td>
+  </tr> 
+  <% end %>
+</table>
+<br>
+<a href="<%= cats_url %>">go back to index</a>
+
+
+
+
+
+
+

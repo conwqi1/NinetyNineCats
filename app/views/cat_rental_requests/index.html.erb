@@ -1,0 +1,21 @@
+<h1>All Rental Requests</h1>
+<table style="width:80%">
+  <tr>
+    <td>Request ID</td>
+    <td>Cat ID</td>
+    <td>Start Date</td>
+    <td>End Date</td>
+  <tr>
+  <%= @rentals.each do |rental| %>
+  <tr>
+    <td><a href="<%cat_rental_request_url(rental.id)%>">
+      <%= rental.id %></a></td>
+      
+    <td><%= rental.cat_id %></td>
+    <td><%= rental.start_date %></td>
+    <td><%= rental.end_date %></td>
+  </tr>
+  <% end %>
+
+</table>
+  

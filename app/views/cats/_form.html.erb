@@ -1,0 +1,31 @@
+
+<label>Name: <input type="text" name="cat[name]" 
+  value='<%= cat.name %>'></label><br>
+
+<label>Age: <input type="text" name="cat[age]" value='<%=cat.age%>'></label><br>
+
+<label>Sex: <input type="radio" name="cat[sex]" value="M"
+  <%= cat.sex == 'M' ? 'checked' : '' %>>M
+<input type="radio" name="cat[sex]" value="F" <% if cat.sex == 'F' %>checked="checked"<% end %>>F</label><br>
+
+<label>Color:
+<select name="cat[color]">
+  <option></option>
+  <% Cat::COLORS.each do |color| %>
+    <option value="<%= color %>"
+      <% if cat.color == color %>selected='selected' <% end %>>
+      <%= color %>
+    </option>
+  <% end %>
+</select></label><br>
+
+<label>Birthdate:
+  <input type="datetime" name="cat[birth_date]" value="<%= cat.birth_date %>">
+</label><br>
+<label>Description:
+  <textarea name="cat[description]"><%= cat.description %></textarea>
+</label><br>
+
+
+<input type="submit" value="submit!">
+
